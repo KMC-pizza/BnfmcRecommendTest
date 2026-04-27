@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>운동 추천</title>
+</head>
+<body>
+
+  <h2>운동 프로그램 추천</h2>
+
+  <p>성별</p>
+  <select id="gender">
+    <option value="남">남</option>
+    <option value="여">여</option>
+  </select>
+
+  <p>나이</p>
+  <select id="age">
+    <option value="20">20대</option>
+    <option value="30">30대</option>
+    <option value="40">40대</option>
+    <option value="50">50대 이상</option>
+  </select>
+
+  <p>운동 목적</p>
+  <select id="goal">
+    <option value="다이어트">다이어트</option>
+    <option value="근력">근력</option>
+    <option value="건강">건강</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="recommend()">추천받기</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function recommend() {
+      var gender = document.getElementById("gender").value;
+      var age = document.getElementById("age").value;
+      var goal = document.getElementById("goal").value;
+
+      var result = "";
+
+      if (goal === "다이어트") {
+        result = "유산소 중심 프로그램";
+      } else if (goal === "근력") {
+        result = "웨이트 트레이닝 프로그램";
+      } else {
+        result = "가벼운 스트레칭 프로그램";
+      }
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+
+</body>
+</html>
